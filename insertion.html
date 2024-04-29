@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="heading">
+      <h1>Insertion Sort</h1>
+    </div>
+    <div id="controls">
+      <input type="text" id="data" placeholder="Enter data" />
+      <div id="controller">
+        <button id="display">Display</button>
+        <button id="sort">Sort</button>
+        <label for="height-adjust">Height</label>
+        <input type="range" id="height-adjust" min="10" max="100" />
+        <label for="speed-adjust">Speed</label>
+        <input type="range" id="speed-adjust" min="1000" max="10000" />
+      </div>
+    </div>
+    <div id="visualizer"></div>
+    <div id="container"></div>
+    <div id="information">
+      <h4>Insertion Sort</h4>
+      <p>
+        Insertion Sort is a straightforward and intuitive sorting algorithm. It
+        operates by dividing the input into a sorted and an unsorted region, and
+        iteratively shrinks the unsorted region by extracting one element at a
+        time and inserting it into the sorted region, at the correct position
+        each time. At the start of the process, the sorted region consists of
+        only the first element of the input, and the unsorted region contains
+        the rest. The algorithm then proceeds by selecting an element from the
+        unsorted region and ‘inserting’ it at the appropriate position in the
+        sorted region. This ‘insertion’ is done by moving all elements in the
+        sorted region that are greater than the element being inserted, one
+        position to the right, and then placing the element at the now vacant
+        position. This process is repeated, with the sorted region gradually
+        expanding and the unsorted region correspondingly shrinking, until the
+        unsorted region is empty, indicating that the input is now fully sorted.
+        The algorithm gets its name from this ‘insertion’ process, which is akin
+        to how a human might sort a hand of playing cards, by repeatedly picking
+        a card and inserting it at the right place among the already sorted
+        cards in hand.
+      </p>
+
+      <p>Here’s a step-by-step explanation:</p>
+      <li>
+        Step 1: The first element in the array is considered as sorted (i.e.,
+        the sorted portion of the array is initially of size 1).
+      </li>
+      <li>
+        Step 2: We then go to the next element in the array. This is the first
+        element in the unsorted portion of the array.
+      </li>
+      <li>
+        Step 3: If this element is greater than the element before it, it
+        remains in its place and we move to the next element.
+      </li>
+      <li>
+        Step 4: If this element is less than the element before it, we compare
+        it with elements from the sorted portion of the array (from right to
+        left), moving them one step to the right until we find an element lesser
+        than the current element or reach the beginning of the array.
+      </li>
+      <li>Step 5: We then insert the element in this position.</li>
+      <li>Step 6: Repeat steps 2-5 until the array is sorted.</li>
+
+      <h4>Complexity</h4>
+      <p>Time Complexity:</p>
+
+      <li>
+        Best Case: The best case occurs when the input array is already sorted.
+        In this case, the time complexity is O(n), where n is the number of
+        elements in the array. This is because, for each element, the algorithm
+        only needs to make one comparison.
+      </li>
+      <li>
+        Worst Case: The worst case occurs when the input array is sorted in
+        reverse order. In this case, the time complexity is O(n2) , as each
+        insertion operation can take up to n comparisons and swaps.
+      </li>
+      <li>Average Case: On average, the time complexity is also O(n2)</li>
+      <p>Space Complexity:</p>
+      <p>
+        The space complexity of Insertion Sort is O(1) , which means it requires
+        a constant amount of additional space. This is because it is an in-place
+        sorting algorithm, i.e., it doesn’t require any extra space apart from
+        the space needed to hold the input array.
+      </p>
+      <h4>Advantages</h4>
+      <li>
+        Simple Implementation: Insertion sort is straightforward to understand
+        and implement.
+      </li>
+      <li>
+        Efficient for Small Lists: For small datasets, insertion sort can be
+        more efficient than more complex algorithms such as Quick Sort or Merge
+        Sort.
+      </li>
+      <li>
+        Insertion sort is adaptive, meaning it is efficient for data sets that
+        are already substantially sorted. The time complexity is linear, i.e.,
+        O(n), when the input array is already sorted.
+      </li>
+      <li>
+        Stable: Insertion sort is stable. It maintains the relative order of
+        equal elements in the sorted output.
+      </li>
+      <li>
+        In-Place: It is an in-place sorting algorithm as it requires a constant
+        amount of additional space.
+      </li>
+      <h4>Disadvantages:</h4>
+      <li>
+        Inefficient for Large Lists: Insertion sort has a worst-case and average
+        time complexity of O(n2) , where n is the number of items being sorted.
+        Hence, it is not suitable for large datasets.
+      </li>
+      <li>
+        Number of Swaps: Insertion sort involves more swaps as compared to other
+        sorting algorithms.
+      </li>
+      <li>
+        Dependent on the Initial Order of Elements: The efficiency of the
+        insertion sort algorithm significantly depends on the initial ordering
+        of the elements in the input array.
+      </li>
+    </div>
+    <div
+      id="ide"
+      data-pym-src="https://www.jdoodle.com/embed/v0/2IhG?stdin=1&arg=0"
+    ></div>
+    <script src="insertion.js"></script>
+    <script
+      src="https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>

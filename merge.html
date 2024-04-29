@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="heading">
+      <h1>Merge Sort</h1>
+    </div>
+    <div id="controls">
+      <input type="text" id="data" placeholder="Enter data" />
+      <div id="controller">
+        <button id="display">Display</button>
+        <button id="sort">Sort</button>
+        <label for="height-adjust">Height</label>
+        <input type="range" id="height-adjust" min="10" max="100" />
+        <label for="speed-adjust">Speed</label>
+        <input type="range" id="speed-adjust" min="1000" max="10000" />
+      </div>
+    </div>
+    <div id="visualizer"></div>
+    <div id="container"></div>
+    <div id="information">
+      <h4>Merge Sort</h4>
+      <p>
+        Merge Sort is a divide-and-conquer algorithm for sorting an array or a
+        list of items. The algorithm works by repeatedly dividing the unsorted
+        list into two halves until we reach a stage where we have sublists of
+        size one, which are inherently sorted. Once these atomic level lists are
+        achieved, the merge process starts. In this process, the atomic lists
+        are merged together two at a time, comparing the elements and arranging
+        them in order during the merge. This merging continues until all the
+        atomic lists are combined back into one sorted list. The key operation
+        in the Merge Sort algorithm is the merging of two sorted sequences in
+        the “combine” step. This operation is quite straightforward and can be
+        performed in linear time. The efficiency of Merge Sort makes it a
+        popular choice in many applications. It has a time complexity of O(n log
+        n) for all cases (best, average, and worst), which is a significant
+        advantage over algorithms like Bubble Sort and Insertion Sort that have
+        a worst-case time complexity of O(n^2). However, one downside of Merge
+        Sort is that it requires additional space, equal to the size of the
+        input array.
+      </p>
+
+      <p>Here’s a step-by-step explanation:</p>
+      <li>
+        Step 1: Start by dividing the list into two halves. This is done
+        recursively until we have sublists of size one, which are inherently
+        sorted.
+      </li>
+      <li>
+        Step 2: Once we have the atomic sublists, we start merging them. This is
+        where the actual sorting happens.
+      </li>
+      <li>
+        Step 3: In the merge process, we take two sorted sublists and combine them into a single sorted list. Here’s how it works:
+        <li>Initialize :
+          Create an empty list to hold the sorted elements.
+          Also, create two pointers (i and j), each pointing to the start of the two sublists.</li>
+        <li>Compare and Insert:
+          Compare the elements at which i and j are pointing.
+          Insert the smaller element into the sorted list and move the pointer of the sublist from which the element was chosen one step forward.</li>
+        <li>Repeat :
+          Repeat the above step until one of the pointers reaches the end of its sublist.</li>
+        <li>Add Remaining Elements :
+          If there are any remaining elements in the other sublist (the one that the pointer hasn’t reached the end of), add them to the end of the sorted list.</li>
+        <li> Return Sorted List :
+          The sorted list is now complete and can be returned.</li>
+      </li>
+      <h4>Complexity</h4>
+      <p>Time Complexity:</p>
+
+      <li>
+        Best Case: The best-case time complexity of Merge Sort is O(nlogn)
+        , which occurs when the input is already sorted.
+      </li>
+      
+      <li>Worst Case: The worst-case time complexity of Merge Sort is O(nlogn)
+        , which occurs when the input is sorted in reverse order.</li>
+        <li>
+          Average Case: The average-case time complexity of Merge Sort is also O(nlogn)
+        </li>
+      <p>Space Complexity:</p>
+      <p>
+        The space complexity of Merge Sort is O(n)
+        , as it requires additional space to temporarily store the array (or list) elements during the sorting process.
+        
+        This makes Merge Sort more efficient in terms of time complexity compared to algorithms like Bubble Sort and Insertion Sort, which have a worst-case and average time complexity of O(n2)
+        . However, one downside of Merge Sort is that it requires additional space, which can be a limiting factor if memory is a concern.
+      </p>
+      <h4>Advantages</h4>
+      <li>
+        Efficient for Large Data: Merge Sort is very efficient for large data sets. It has a time complexity of O(nlogn)
+ in all three cases (worst, average, and best), which makes it suitable for sorting large data sets.
+      </li>
+      <li>
+        Stable: Merge Sort is a stable sorting algorithm. This means that equal elements remain in their original order even after sorting.
+      </li>
+      <li>
+        Works Well with External Storage: Merge Sort works well with disk-based and tape-based storage systems where only sequential access is allowed, as it only makes one pass through the data.
+      </li>
+      <h4>Disadvantages:</h4>
+      <li>
+        Overhead of Recursion: The recursive nature of Merge Sort can lead to overhead, especially for smaller lists, where the overhead of the recursive calls can outweigh the sorting itself.
+      </li>
+      <li>
+        Overhead of Recursion: The recursive nature of Merge Sort can lead to overhead, especially for smaller lists, where the overhead of the recursive calls can outweigh the sorting itself.
+      </li>
+    </div>
+    <div
+      id="ide"
+      data-pym-src="https://www.jdoodle.com/embed/v0/2IhG?stdin=1&arg=0"
+    ></div>
+    <script src="merge.js"></script>
+    <script
+      src="https://www.jdoodle.com/assets/jdoodle-pym.min.js"
+      type="text/javascript"
+    ></script>
+  </body>
+</html>
